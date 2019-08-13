@@ -1,4 +1,4 @@
-#include "factorial.hpp"
+#include "../include/factorial.hpp"
 
 Factorial::Factorial() {}
 

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <iostream>
-#include "../factorial.hpp"
+#include "../include/factorial.hpp"
 
 class FactorialTest : public ::testing::Test {
  protected:

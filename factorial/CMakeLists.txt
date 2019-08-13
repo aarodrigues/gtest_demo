@@ -5,9 +5,9 @@ set (CMAKE_CXX_STANDARD 11)
 # set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
 # set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(ENTRY_POINT "main.cpp")
-set(HEADERS "factorial.cpp")
-set(SOURCES "factorial.hpp")
+set(HEADERS "include/factorial.hpp")
+set(SOURCES "src/factorial.cpp")
+set(ENTRY_POINT "src/main.cpp")
 
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
 # set library name

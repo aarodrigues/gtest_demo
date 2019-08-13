@@ -1,5 +1,5 @@
 #include<iostream>
-#include "factorial.hpp"
+#include "../include/factorial.hpp"
 
 int main(){
     Factorial factorial;
