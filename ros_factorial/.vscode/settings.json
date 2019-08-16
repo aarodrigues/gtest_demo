@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/alano/Development/autoproj/install/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages",
+        "/home/alano/Development/autoproj/install/lib/python2.7/site-packages",
+        "/home/alano/Development/autoproj/install/lib/python2.7/site-packages",
+        "/home/alano/Development/autoproj/install/lib/python2.7/site-packages"
+    ]
+}
