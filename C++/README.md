@@ -17,13 +17,13 @@ $ mkdir build && cd build
 $ cmake ..
 ```
 
-2. Excute binary file
+2. Execute basic binary file
 
 ```
 $ ./unit_tests_basic
 ```
 
-or
+or execute fixture binary file
 
 ```
 $ ./unit_tests_fixture
