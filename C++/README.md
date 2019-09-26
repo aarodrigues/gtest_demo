@@ -1,4 +1,4 @@
-# Google Test
+# Google Test (GTest)
 Using google test to run unit tests with cmake
 
 ## Getting Started
