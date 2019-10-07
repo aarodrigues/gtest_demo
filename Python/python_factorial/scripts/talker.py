@@ -44,14 +44,13 @@ def talker():
     pub = rospy.Publisher('chatter', Int64, queue_size=10)
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(0.5) # 0.5hz
-    count = 0
+    number = 5
 
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % count
+        hello_str = "hello world %s" % number
         rospy.loginfo(hello_str)
-        pub.publish(count)
+        pub.publish(number)
         rate.sleep()
-        count+=1
 
 if __name__ == '__main__':
     try:

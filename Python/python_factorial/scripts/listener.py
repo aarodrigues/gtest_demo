@@ -40,26 +40,32 @@ import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Int64
 
-def factorial(n):
-    return 1 if (n < 1) else factorial(n-1) * n
+class ListenerFactorial:
 
-def chatter_callback(data):
-    rospy.loginfo(rospy.get_caller_id() + 'I heard %s', factorial(data.data))
+    def __init__(self, topic_name, message_type):
+        self.sub = rospy.Subscriber(topic_name, message_type, self.chatter_callback)
 
+    def factorial(self,n):
+        return 1 if (n < 1) else self.factorial(n-1) * n
 
-def listener():
+    def chatter_callback(self,data):
+        rospy.loginfo(rospy.get_caller_id() + 'I heard %s', self.factorial(data.data))
 
-    # In ROS, nodes are uniquely named. If two nodes with the same
-    # name are launched, the previous one is kicked off. The
-    # anonymous=True flag means that rospy will choose a unique
-    # name for our 'listener' node so that multiple listeners can
-    # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
+    # def listener(self):
 
-    rospy.Subscriber('chatter', Int64, chatter_callback)
+    #     # In ROS, nodes are uniquely named. If two nodes with the same
+    #     # name are launched, the previous one is kicked off. The
+    #     # anonymous=True flag means that rospy will choose a unique
+    #     # name for our 'listener' node so that multiple listeners can
+    #     # run simultaneously.
+    #     rospy.init_node('listener', anonymous=True)
 
-    # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    #     rospy.Subscriber('chatter', Int64, chatter_callback)
+
+    #     # spin() simply keeps python from exiting until this node is stopped
+    #     rospy.spin()
 
 if __name__ == '__main__':
-    listener()
+    rospy.init_node('listener', anonymous=True)
+    listen = ListenerFactorial('chatter',Int64)
+    rospy.spin()

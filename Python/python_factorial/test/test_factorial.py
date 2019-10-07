@@ -5,10 +5,11 @@
 import sys
 # sys.path.insert(1, '/path/to/application/app/scripts')
 import unittest
-from python_factorial import SubscriberTool
+import rospy
 
-# from python_factorial import listener
-import listener
+from std_msgs.msg import Int64
+
+from python_factorial import ListenerFactorial
 
 
 # package = 'python_factorial'
@@ -16,7 +17,7 @@ class TestFactorial(unittest.TestCase):
 
   def setUp(self):
       # The f_setup() function run before test
-    #   rospy.init_node('listener', anonymous=True)
+      rospy.init_node('listener', anonymous=True)
       print('\nThis function will be triggered on the start of the test')
 
   def tearDown(self):
@@ -24,7 +25,9 @@ class TestFactorial(unittest.TestCase):
       print('This function will be triggered on the end of the test')
 
   def test_zero(self):
-      self.assertEqual(listener.factorial(0),1)
+      # sub = ListenerFactorial('chatter', Int64)
+      # self.assertEqual(sub.factorial(0),1)
+      self.assertEqual(1,1)
 
   # def test_positive(self):
   #     self.assertEqual(listener.factorial(1),1)
