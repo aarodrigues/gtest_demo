@@ -15,7 +15,7 @@ To run fixtures examples run:
 $ python basic_fixture/factorial_test.py
 ```
 
-To run ros_factorial example ron catkin workspace execute:
+To run ros_factorial example on catkin workspace execute:
 
 ```
 $ catkin_make
